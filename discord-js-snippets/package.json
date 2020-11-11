@@ -1,0 +1,26 @@
+{
+    "name": "discord-js-snippets",
+    "displayName": "Discord.JS Snippets",
+    "description": "Generates snippets for discord.js.",
+    "version": "0.0.1",
+    "publisher": "Irian3x3",
+    "icon": "logo.png",
+    "engines": {
+        "vscode": "^1.51.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/snippets.code-snippets"
+            },
+            {
+                "language": "typescript",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "Basic Bot": {
+        "prefix": ">basicBot",
+        "body": [
+            "const discord, { Client } = require(\"discord.js\")",
+            "const bot = new Client()",
+            "bot.on(\"ready\", () => {",
+            "console.log(`Ready on login ${bot.user.tag}!`)",
+            "})",
+            "bot.on('message', message => {",
+            "if (message.content === '!ping') { message.channel.send('Pong!') };",
+            "})",
+            "bot.login(\"YOUR-TOKEN-GOES-HERE\")"
+        ],
+        "description": "Generates a basic bot."
+    },
+    "CmdBot": {
+        "prefix": ">cmdBot",
+        "body": [
+            "const discord, { Client } = require(\"discord.js\");",
+            "const bot = new Client();",
+            "let prefix = \"?\"; // You can change this.",
+            "",
+            "bot.on(\"ready\", () => {",
+            "   console.log(`Ready! On login ${bot.user.tag}!`)",
+            "})",
+            "",
+            "bot.on(\"message\", async message => {",
+            "   const args = message.content.slice(prefix.length).trim().split(/ +/)",
+            "   const commmand = args.shift().toLowercase();",
+            "   if (command === \"ping\") {",
+            "       message.reply(\"Pong!\")",
+            "   } else if (command === \"foo\") {",
+            "       message.reply(\"bar.\")",
+            "   }",
+            "})",
+            "",
+            "bot.login(\"YOUR-TOKEN-GOES-HERE\")"
+        ],
+        "description": "Generates a bot with a simple command system."
+    }
+}
