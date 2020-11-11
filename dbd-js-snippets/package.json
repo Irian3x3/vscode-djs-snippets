@@ -1,0 +1,22 @@
+{
+    "name": "dbd-js-snippets",
+    "displayName": "DBD.js Snippets",
+    "description": "Generates snippets for DBD.js",
+    "version": "1.0.0",
+    "publisher": "Irian3x3",
+    "icon": "https://cdn.discordapp.com/icons/773352845738115102/a_8be22d88f305c6b32d8eb22d2419ad1b.png?size=128",
+    "engines": {
+        "vscode": "^1.51.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    }
+}

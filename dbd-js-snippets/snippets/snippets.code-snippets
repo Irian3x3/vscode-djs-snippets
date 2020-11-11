@@ -1,0 +1,55 @@
+{
+    "Basic Bot": {
+        "prefix": "?dbdBasicBot",
+        "body": [
+            "const dbd, { Bot } = require(\"dbd.js\");",
+            "",
+            "const bot = new Bot({",
+            "   token: \"TOKEN\",",
+            "   prefix: \"PREFIX\"",
+            "});",
+            "",
+            "bot.onMessage();"
+        ],
+        "description": "Generates a basic DBD.js bot"
+    },
+    "Command": {
+        "prefix": "?dbdNewCommand",
+        "body": [
+            "bot.command({",
+            "   name: \"COMMAND_NAME\",",
+            "   code: `COMMAND CODE`",
+            "})"
+        ],
+        "description": "Creates a command."
+    },
+    "Status": {
+        "prefix": "?dbdStatus",
+        "body": [
+            "bot.status({",
+            "   text: \"STATUS_TEXT\",",
+            "   type: \"STATUS_TYPE\", // One of PLAYING, WATCHING, LISTENING, STREAMING",
+            "   time: time // Number, must not be less than 12 seconds due to discord API limitations",
+            "});"
+        ],
+        "description": "Sets a bot status"
+    },
+    "Command Handler": {
+        "prefix": "?dbdCmdHandler",
+        "body": [
+            "const fs = require(\"fs\");",
+            "const cmdsDir = fs.readdirSync(\"./commands\")",
+            "for (const category of cmdsDir) {",
+            "   const file = fs.readdirSync(`./commands/${${category}}/`).filter(file => file.endsWith(\".js\"))",
+            "   for (const cmdFile of file) {",
+            "       const command = require(`./commands/${${category}}/${${cmdFile}}`)",
+            "       bot.command({",
+            "           name: command.name,",
+            "           code: command.code",
+            "       })",
+            "   }",
+            "}"
+        ],
+        "description": "Generates a command handler"
+    }
+}
